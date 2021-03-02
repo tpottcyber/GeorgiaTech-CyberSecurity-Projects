@@ -118,14 +118,14 @@ SSH into the control node and follow the steps below:
 - hosts: update and create a section to discover the Elk Server just like the web servers - private ip address ansible_python_interpreter=/usr/bin/python3 
 - Run the playbook, and navigate to **Web-1 and Web-2 /etc/filebeat or /etc/metricbeat** to check that the installation worked as expected. 
 
-Answer the following questions to fill in the blanks:_
+Answer the following questions to fill in the blanks:
 
 - _Which file is the playbook? **playbook.yml** Where do you copy it? **/etc/ansible**_
 - Which file do you update to make Ansible run the playbook on a specific machine? **filebeat-config.yml and hosts.yml** How do I specify which machine to install the ELK server on versus which to install Filebeat on? **The Elk Server is the VM that will monitor and maintain the data for logging.  The Filebeat is installed on the Web Servers, which will be monitored, the same process is executed for Metricbeat.** 
 
 Which URL do you navigate to in order to check that the ELK server is running? **<public_ipaddress>:5601/app/kibana**
 
-As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc.
 
 - hosts
 - ansible-playbook filebeat-playbook.yml
