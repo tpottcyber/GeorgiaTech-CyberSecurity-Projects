@@ -120,14 +120,16 @@ SSH into the control node and follow the steps below:
 
 Answer the following questions to fill in the blanks:_
 
-- _Which file is the playbook? **-playbook.yml** Where do you copy it? **/etc/ansible**_
-- Which file do you update to make Ansible run the playbook on a specific machine? **filebeat-config.yml and hosts.yml** How do I specify which machine to install the ELK server on versus which to install Filebeat on? **The Elk Server is the VM that will monitor and maintain the data for logging.  The Filebeat is installed on the Web Servers, which will be monitored, the same process is executed for Metricbeat.** _
-- Which URL do you navigate to in order to check that the ELK server is running? **<public_ipaddress>:5601/app/kibana**
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+- _Which file is the playbook? **playbook.yml** Where do you copy it? **/etc/ansible**_
+- Which file do you update to make Ansible run the playbook on a specific machine? **filebeat-config.yml and hosts.yml** How do I specify which machine to install the ELK server on versus which to install Filebeat on? **The Elk Server is the VM that will monitor and maintain the data for logging.  The Filebeat is installed on the Web Servers, which will be monitored, the same process is executed for Metricbeat.** 
 
-- _hosts
-- _ansible-playbook filebeat-playbook.yml
-- _filebeat-config.yml
-- _ansible-playbook metricbeat-playbook.yml
-- _metricbeat-config.yml
+Which URL do you navigate to in order to check that the ELK server is running? **<public_ipaddress>:5601/app/kibana**
+
+As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+
+- hosts
+- ansible-playbook filebeat-playbook.yml
+- filebeat-config.yml
+- ansible-playbook metricbeat-playbook.yml
+- metricbeat-config.yml
 
