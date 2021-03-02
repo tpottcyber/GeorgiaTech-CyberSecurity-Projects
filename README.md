@@ -78,7 +78,7 @@ The playbook implements the following tasks:
 - _Create Virtual Network_
 - _Create a Peer Network Connection_
 - _Create a new VM_
-- Download and configure a container_
+- Download and configure a container
 - _Launch and expose container and implement identity and access management_
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
@@ -101,7 +101,7 @@ We have installed the following Beats on these machines:
 - _metricbeat_
 These Beats allow us to collect the following information from each machine:
 
-In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc.
 
 - Filebeat monitors server logs and system logs provided detailed information regarding connections, errors encountered, etc.  
 
