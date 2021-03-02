@@ -83,7 +83,7 @@ The playbook implements the following tasks:
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-![ Docker PS Output ](Project-1-Azure Kibana/Images/docker_ps_output.png)
+![ Docker PS Output ](Images/docker_ps_output.png)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
@@ -100,26 +100,29 @@ We have installed the following Beats on these machines:
 - _filebeat_
 - _metricbeat_
 These Beats allow us to collect the following information from each machine:
-- _In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
 
-- _Filebeat monitors server logs and system logs provided detailed information regarding connections, errors encountered, etc.  
+In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+
+- Filebeat monitors server logs and system logs provided detailed information regarding connections, errors encountered, etc.  
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the **/etc/ansible/filebeat-config.yml** file to **/etc/filebeat/filebeat.yml**. _
-- Update the **filebeat-playbook.yml** file to include commands and source/destination locations. _
-- Update the **filebeat-config, metricbeat config, and hosts file to include your private ip addresses**. _
-- filebeat-config/metricbeat-config:  output.elasticsearch:  update with your private ip address _
-- filebeat-config/metricbeat-config: setup.kibana: update with your private ip address only _
-- hosts:  update the webservers section: private ip address ansible_python_interpreter=/usr/bin/python3 (for each web server) _
-- hosts: update and create a section to discover the Elk Server just like the web servers - private ip address ansible_python_interpreter=/usr/bin/python3 _
-- Run the playbook, and navigate to **Web-1 and Web-2 /etc/filebeat or /etc/metricbeat** to check that the installation worked as expected. _
-_Answer the following questions to fill in the blanks:_
+- Copy the **/etc/ansible/filebeat-config.yml** file to **/etc/filebeat/filebeat.yml**. 
+- Update the **filebeat-playbook.yml** file to include commands and source/destination locations. 
+- Update the **filebeat-config, metricbeat config, and hosts file to include your private ip addresses**. 
+- filebeat-config/metricbeat-config:  output.elasticsearch:  update with your private ip address 
+- filebeat-config/metricbeat-config: setup.kibana: update with your private ip address only 
+- hosts:  update the webservers section: private ip address ansible_python_interpreter=/usr/bin/python3 (for each web server) 
+- hosts: update and create a section to discover the Elk Server just like the web servers - private ip address ansible_python_interpreter=/usr/bin/python3 
+- Run the playbook, and navigate to **Web-1 and Web-2 /etc/filebeat or /etc/metricbeat** to check that the installation worked as expected. 
+
+Answer the following questions to fill in the blanks:_
+
 - _Which file is the playbook? **-playbook.yml** Where do you copy it? **/etc/ansible**_
-- _Which file do you update to make Ansible run the playbook on a specific machine? **filebeat-config.yml and hosts.yml** How do I specify which machine to install the ELK server on versus which to install Filebeat on? **The Elk Server is the VM that will monitor and maintain the data for logging.  The Filebeat is installed on the Web Servers, which will be monitored, the same process is executed for Metricbeat.** _
-- _Which URL do you navigate to in order to check that the ELK server is running? **<public_ipaddress>:5601/app/kibana**
+- Which file do you update to make Ansible run the playbook on a specific machine? **filebeat-config.yml and hosts.yml** How do I specify which machine to install the ELK server on versus which to install Filebeat on? **The Elk Server is the VM that will monitor and maintain the data for logging.  The Filebeat is installed on the Web Servers, which will be monitored, the same process is executed for Metricbeat.** _
+- Which URL do you navigate to in order to check that the ELK server is running? **<public_ipaddress>:5601/app/kibana**
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
 
 - _hosts
