@@ -2,7 +2,7 @@
 
 The files in this repository were used to configure the network depicted below.
 
-![Azure Elkstack Cloud Infrastructure Network Diagram](Images/Azure Elkstack Cloud Infrastructure.png)
+![ Azure Elkstack Cloud Infrastructure Network Diagram ](Images/Azure Elkstack Cloud Infrastructure.png)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the **playbook** file may be used to install only certain pieces of it, such as Filebeat.
 
@@ -30,7 +30,7 @@ This document contains the following details:
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
 Load balancing ensures that the application will be highly available and accessible, in addition to restricting unauthorized users to the network.
-- _What aspect of security do load balancers protect? Helps distribute traffic evenly across the servers and mitigates DDOS Attacks.  What is the advantage of a jump box? Allows a secure means to offer public accessibility for the user community, then allowing those users to access through security groups for internal VM connections. _
+- What aspect of security do load balancers protect? Helps distribute traffic evenly across the servers and mitigates DDOS Attacks.  What is the advantage of a jump box? Allows a secure means to offer public accessibility for the user community, then allowing those users to access through security groups for internal VM connections. _
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the infrastrucuture, logs, administrative security and system traffic.
 - _What does Filebeat watch for? **Collects data bout the file system**_
@@ -55,9 +55,11 @@ Only the Jump Box machine can accept connections from the Internet. Access to th
 
 
 Machines within the network can only be accessed by Jump Box and ElkStack.
-- _Which machine did you allow to access your ELK VM? JumpBox What was its IP address?_
+
+Which machine did you allow to access your ELK VM? JumpBox What was its IP address?_
 - _Private_IP_
 - _75.131.6.100_
+
 A summary of the access policies in place can be found in the table below.
 
 | Name        | Publicly Accessible | Allowed IP Addresses     |
@@ -81,7 +83,7 @@ The playbook implements the following tasks:
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-![ Docker PS Output ](Project-1-Azure Kibana/Images/docker_ps_output.png)
+![ Docker PS Output ](Images/docker_ps_output.png)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
@@ -98,31 +100,39 @@ We have installed the following Beats on these machines:
 - _filebeat_
 - _metricbeat_
 These Beats allow us to collect the following information from each machine:
-- _In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
 
-- _Filebeat monitors server logs and system logs provided detailed information regarding connections, errors encountered, etc.  
+In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+
+- Filebeat monitors server logs and system logs provided detailed information regarding connections, errors encountered, etc.  
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the **/etc/ansible/filebeat-config.yml** file to **/etc/filebeat/filebeat.yml**. _
-- Update the **filebeat-playbook.yml** file to include commands and source/destination locations. _
-- Update the **filebeat-config, metricbeat config, and hosts file to include your private ip addresses**. _
-- filebeat-config/metricbeat-config:  output.elasticsearch:  update with your private ip address _
-- filebeat-config/metricbeat-config: setup.kibana: update with your private ip address only _
-- hosts:  update the webservers section: private ip address ansible_python_interpreter=/usr/bin/python3 (for each web server) _
-- hosts: update and create a section to discover the Elk Server just like the web servers - private ip address ansible_python_interpreter=/usr/bin/python3 _
-- Run the playbook, and navigate to **Web-1 and Web-2 /etc/filebeat or /etc/metricbeat** to check that the installation worked as expected. _
-_Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? **-playbook.yml** Where do you copy it? **/etc/ansible**_
-- _Which file do you update to make Ansible run the playbook on a specific machine? **filebeat-config.yml and hosts.yml** How do I specify which machine to install the ELK server on versus which to install Filebeat on? **The Elk Server is the VM that will monitor and maintain the data for logging.  The Filebeat is installed on the Web Servers, which will be monitored, the same process is executed for Metricbeat.** _
-- _Which URL do you navigate to in order to check that the ELK server is running? **<public_ipaddress>:5601/app/kibana**
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+- Copy the **/etc/ansible/filebeat-config.yml** file to **/etc/filebeat/filebeat.yml**. 
+- Update the **filebeat-playbook.yml** file to include commands and source/destination locations. 
+- Update the **filebeat-config, metricbeat config, and hosts file to include your private ip addresses**. 
+- filebeat-config/metricbeat-config:  output.elasticsearch:  update with your private ip address 
+- filebeat-config/metricbeat-config: setup.kibana: update with your private ip address only 
+- hosts:  update the webservers section: private ip address ansible_python_interpreter=/usr/bin/python3 (for each web server) 
+- hosts: update and create a section to discover the Elk Server just like the web servers - private ip address ansible_python_interpreter=/usr/bin/python3 
+- Run the playbook, and navigate to **Web-1 and Web-2 /etc/filebeat or /etc/metricbeat** to check that the installation worked as expected. 
 
-- _hosts
-- _ansible-playbook filebeat-playbook.yml
-- _filebeat-config.yml
-- _ansible-playbook metricbeat-playbook.yml
-- _metricbeat-config.yml
+Answer the following questions to fill in the blanks:_
+
+- _Which file is the playbook? **playbook.yml** Where do you copy it? **/etc/ansible**_
+- Which file do you update to make Ansible run the playbook on a specific machine? **filebeat-config.yml and hosts.yml** How do I specify which machine to install the ELK server on versus which to install Filebeat on? **The Elk Server is the VM that will monitor and maintain the data for logging.  The Filebeat is installed on the Web Servers, which will be monitored, the same process is executed for Metricbeat.** 
+
+Which URL do you navigate to in order to check that the ELK server is running? **<public_ipaddress>:5601/app/kibana**
+
+As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+
+- hosts
+- ansible-playbook filebeat-playbook.yml
+- filebeat-config.yml
+- ansible-playbook metricbeat-playbook.yml
+- metricbeat-config.yml
+- curl https://gist.githubusercontent.com/slape/58541585cc1886d2e26cd8be557ce04c/raw/0ce2c7e744c54513616966affb5e9d96f5e12f73/metricbeat > /etc/ansible/metricbeat-config.yml
+- curl https://gist.githubusercontent.com/slape/5cc350109583af6cbe577bbcc0710c93/raw/eca603b72586fbe148c11f9c87bf96a63cb25760/Filebeat > /etc/ansible/filebeat-config.yml
+
 
