@@ -123,9 +123,10 @@ Answer the following questions to fill in the blanks:
 - _Which file is the playbook? **playbook.yml** Where do you copy it? **/etc/ansible**_
 - Which file do you update to make Ansible run the playbook on a specific machine? **filebeat-config.yml and hosts.yml** How do I specify which machine to install the ELK server on versus which to install Filebeat on? **The Elk Server is the VM that will monitor and maintain the data for logging.  The Filebeat is installed on the Web Servers, which will be monitored, the same process is executed for Metricbeat.** 
 
-Which URL do you navigate to in order to check that the ELK server is running? **<public_ipaddress>:5601/app/kibana**
+URL utilizted to navigate in order to check that the ELK server is running:
+- **<public_ipaddress>:5601/app/kibana**
 
-As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc.
+Provide the specific commands the user will need to run to download the playbook, update the files, etc.
 
 - hosts
 - ansible-playbook filebeat-playbook.yml
@@ -134,5 +135,36 @@ As a **Bonus**, provide the specific commands the user will need to run to downl
 - metricbeat-config.yml
 - curl https://gist.githubusercontent.com/slape/58541585cc1886d2e26cd8be557ce04c/raw/0ce2c7e744c54513616966affb5e9d96f5e12f73/metricbeat > /etc/ansible/metricbeat-config.yml
 - curl https://gist.githubusercontent.com/slape/5cc350109583af6cbe577bbcc0710c93/raw/eca603b72586fbe148c11f9c87bf96a63cb25760/Filebeat > /etc/ansible/filebeat-config.yml
+
+Steps To Create a Standard Container:
+
+1.  ssh -i  ~/.ssh/id_rsa azureuser@13.68.185.189
+2.  sudo -l
+3   sudo docker container list -a
+4.  sudo docker start 403d
+5.  sudo docker ps
+6.  sudo docker attach 403d
+7.  cd /etc/anisble
+8.  nano /etc/ansible/hosts
+9.  nano /etc/ansible/ansible.cfg
+10.  ansible all -m ping
+11.  ansible-playbook my-playbook.yml
+12.  nano /etc/ansible/pentest.yml
+13.  ansible-playbook pentest.yml
+14.  nano /etc/ansible/pentest.yml
+15.  ansible-playbook pentest.yml
+
+-	Validate with your curl command
+
+Filebeat same process as above with the execption of executing the curl command below to download filebeat-config-.yml and microbeat-config.yml
+
+16.  curl https://gist.githubusercontent.com/slape/5cc350109583af6cbe577bbcc0710c93/raw/eca603b72586fbe148c11f9c87bf96a63cb25760/Filebeat > /etc/ansible/filebeat-config.yml
+17.  ansible-playbook filebeat-playbook.yml
+18.  curl https://gist.githubusercontent.com/slape/58541585cc1886d2e26cd8be557ce04c/raw/0ce2c7e744c54513616966affb5e9d96f5e12f73/metricbeat > /etc/ansible/metricbeat-config.yml
+19.  ansible-playbook metricbeat-playbook.yml
+
+All Configuration Files located here
+![Ansible Configuration Files](GeorgiaTech-CyberSecurity-Projects/Project-1-Azure Kibana/ansible)
+
 
 
