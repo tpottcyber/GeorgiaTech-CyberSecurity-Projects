@@ -57,13 +57,13 @@ Machines within the network can only be accessed by Jump Box and ElkStack.
 
 We allowed access our ELK VM for the following JumpBox IP address:
 - _Private_IP_
-- _75.131.6.100_
+- _Public_IP_
 
 A summary of the access policies in place can be found in the table below.
 
 | Name        | Publicly Accessible | Allowed IP Addresses     |
 |-------------|------------------------|-----------------------------|
-| Jump Box | Yes                           | Private IP  40.114.73.49 |
+| Jump Box | Yes                           | Private IP  Public IP |
 | Web-1       |  No                           |  Private IP                       |
 | Web-2       |  No                           |   Private IP                      |
 
