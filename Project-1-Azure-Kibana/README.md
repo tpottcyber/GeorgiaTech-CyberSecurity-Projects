@@ -159,6 +159,6 @@ Filebeat same process as above with the execption of executing the curl command 
 20.  ansible-playbook metricbeat-playbook.yml
 
 **All Configuration Files located here**
-- Project-1-Azure Kibana/ansible)
+- https://github.com/tpottcyber/GeorgiaTech-CyberSecurity-Projects
 
 
