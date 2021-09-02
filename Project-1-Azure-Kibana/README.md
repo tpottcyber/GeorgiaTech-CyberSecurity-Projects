@@ -162,4 +162,3 @@ Filebeat same process as above with the execption of executing the curl command 
 - Project-1-Azure Kibana/ansible)
 
 
-
