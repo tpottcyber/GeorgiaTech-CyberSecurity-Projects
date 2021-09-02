@@ -1,74 +1,82 @@
-Network Analysis
-Time Thieves
+## Network Analysis
+**Time Thieves**
+
 At least two users on the network have been wasting time on YouTube. Usually, IT wouldn't pay much mind to this behavior, but it seems these people have created their own web server on the corporate network. So far, Security knows the following about these time thieves:
-●	They have set up an Active Directory network.
-●	They are constantly watching videos on YouTube.
-●	Their IP addresses are somewhere in the range 10.6.12.0/24.
-You must inspect your traffic capture to answer the following questions:
+
+-	Configured an Active Directory network.
+-	The users are constantly watching videos on YouTube.
+- Their IP addresses are somewhere in the range 10.6.12.0/24.
+
 1.	What is the domain name of the users' custom site?
-o	frank-n-ted.com
+- frank-n-ted.com
 
 2.	What is the IP address of the Domain Controller (DC) of the AD network?
-o	10.6.12.203 / 205.185.125.104
-o	 Frank-n-Ted-DC.frank-n-ted.com
+- 10.6.12.203 / 205.185.125.104
+- Frank-n-Ted-DC.frank-n-ted.com
 
 3.	What is the name of the malware downloaded to the 10.6.12.203 machine? Once you have found the file, export it to your Kali machine's desktop.
-o	File -> Export Objects – > Search/Filter for dll ->  save and download the dll 
-o	june11.dll
+- File -> Export Objects – > Search/Filter for dll ->  save and download the dll 
+- june11.dll
 
 
 
 1.	Upload the file to VirusTotal.com. What kind of malware is this classified as?
-o	Trojan.Mint.Zamg.O 
+- Trojan.Mint.Zamg.O 
 
 
 
 Vulnerable Windows Machines
-The Security team received reports of an infected Windows host on the network. They know the following:
-●	Machines in the network live in the range 172.16.4.0/24.
-●	The domain mind-hammer.net is associated with the infected computer.
-●	The DC for this network lives at 172.16.4.4 and is named Mind-Hammer-DC.
-●	The network has standard gateway and broadcast addresses.
+The Security team received reports of an infected Windows host on the network. The following is known:
+- Machines in the network live in the range 172.16.4.0/24.
+- The domain mind-hammer.net is associated with the infected computer.
+- The DC for this network lives at 172.16.4.4 and is named Mind-Hammer-DC.
+- The network has standard gateway and broadcast addresses.
+
+
 Inspect your traffic to answer the following questions:
 1.	Find the following information about the infected Windows machine:
-o	Host name: Rotterdam-PC.mind-hammer.net 
-o	IP address: (172.16.4.205)
-o	MAC address:  00:59:07:b0:63:a4
+- Host name: Rotterdam-PC.mind-hammer.net 
+- IP address: (172.16.4.205)
+- MAC address:  00:59:07:b0:63:a4
 
 
 
 1.	What is the username of the Windows user whose computer is infected?
-o	matthijs.devries
+- matthijs.devries
 
 
 
 
 1.	What are the IP addresses used in the actual infection traffic?
-o	185.243.115.84
+- 185.243.115.84
 
 
 
 
 1.	As a bonus, retrieve the desktop background of the Windows host
-o	It’s a bird exported object 
+- It’s a bird exported object 
 
 
 
 Illegal Downloads
 IT was informed that some users are torrenting on the network. The Security team does not forbid the use of torrents for legitimate purposes, such as downloading operating systems. However, they have a strict policy against copyright infringement.
+
 IT shared the following about the torrent activity:
-●	The machines using torrents live in the range 10.0.0.0/24 and are clients of an AD domain.
-●	The DC of this domain lives at 10.0.0.2 and is named DogOfTheYear-DC.
-●	The DC is associated with the domain dogoftheyear.net.
+
+- The machines using torrents live in the range 10.0.0.0/24 and are clients of an AD domain.
+- The DC of this domain lives at 10.0.0.2 and is named DogOfTheYear-DC.
+- The DC is associated with the domain dogoftheyear.net.
+
 Your task is to isolate torrent traffic and answer the following questions:
-1.	Find the following information about the machine with IP address 10.0.0.201:
-o	MAC address:  00:16:17:18:66:c8
-o	Windows username:  elmer.blanco
-o	OS version:  Windows NT
+
+Find the following information about the machine with IP address 10.0.0.201:
+- MAC address:  00:16:17:18:66:c8
+- Windows username:  elmer.blanco
+- OS version:  Windows NT
 
 
 
 
 2.	Which torrent file did the user download?
-o	Betty_Boop_Rhythm_on_the_Reservation
+- Betty_Boop_Rhythm_on_the_Reservation
 
