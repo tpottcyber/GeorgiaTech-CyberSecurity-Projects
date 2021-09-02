@@ -2,7 +2,7 @@
 
 The files in this repository were used to configure the network depicted below.
 
-![ Azure Elkstack Cloud Infrastructure Network Diagram ](Project-1-Azure-Kibana/Images/Azure-Elkstack-Cloud-Infrastructure.png)
+![ Azure Elkstack Cloud Infrastructure Network Diagram ](Images/Azure-Elkstack-Cloud-Infrastructure.png)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the **playbook** file may be used to install only certain pieces of it, such as Filebeat.
 
