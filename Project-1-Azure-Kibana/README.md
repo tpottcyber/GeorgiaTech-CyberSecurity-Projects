@@ -33,8 +33,8 @@ Load balancing ensures that the application will be highly available and accessi
 - Load Balancing helps distribute traffic evenly across the servers and mitigates DDOS Attacks. The advantage of the Jump Box allows a secure means to offer public accessibility for the user community, then allowing those users to access through security groups for internal VM connections.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the infrastrucuture, logs, administrative security and system traffic.
-- _Filebeat **Collects data bout the file system**_
-- _ Metricbeat records and **Collects host level metrics, including uptime**_
+- Filebeat **Collects data bout the file system**
+- Metricbeat records and **Collects host level metrics, including uptime**
 
 The configuration details of each machine may be found below.
 
@@ -50,14 +50,13 @@ The configuration details of each machine may be found below.
 The machines on the internal network are not exposed to the public Internet. 
 
 Only the Jump Box machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _Public IP Address_
-
+- Public IP Address
 
 Machines within the network can only be accessed by Jump Box and ElkStack.
 
 We allowed access our ELK VM for the following JumpBox IP address:
-- _Private_IP_
-- _Public_IP_
+- Private_IP
+- Public_IP
 
 A summary of the access policies in place can be found in the table below.
 
@@ -116,7 +115,7 @@ SSH into the control node and follow the steps below:
 
 Answer the following questions to fill in the blanks:
 
-- _All playbooks are formated as appname**playbook.yml** and files for execution are copied to **/etc/ansible**_
+- All playbooks are formated as appname**playbook.yml** and files for execution are copied to **/etc/ansible**
 - You update these files to make Ansible run the playbook on a specific machine, **filebeat-config.yml, metricbeat-config and hosts.yml** 
 - **The Elk Server is the VM that will monitor and maintain the data for logging.  The Filebeat is installed on the Web Servers, which will be monitored, the same process is executed for Metricbeat.** 
 
@@ -150,15 +149,14 @@ Steps To Create a Standard Container:
 13.  ansible-playbook pentest.yml
 14.  nano /etc/ansible/pentest.yml
 15.  ansible-playbook pentest.yml
-
--	Validate with your curl command
+16.  Validate with your curl command
 
 Filebeat same process as above with the execption of executing the curl command below to download filebeat-config-.yml and microbeat-config.yml
 
-16.  curl https://gist.githubusercontent.com/slape/5cc350109583af6cbe577bbcc0710c93/raw/eca603b72586fbe148c11f9c87bf96a63cb25760/Filebeat > /etc/ansible/filebeat-config.yml
-17.  ansible-playbook filebeat-playbook.yml
-18.  curl https://gist.githubusercontent.com/slape/58541585cc1886d2e26cd8be557ce04c/raw/0ce2c7e744c54513616966affb5e9d96f5e12f73/metricbeat > /etc/ansible/metricbeat-config.yml
-19.  ansible-playbook metricbeat-playbook.yml
+17.  curl https://gist.githubusercontent.com/slape/5cc350109583af6cbe577bbcc0710c93/raw/eca603b72586fbe148c11f9c87bf96a63cb25760/Filebeat > /etc/ansible/filebeat-config.yml
+18.  ansible-playbook filebeat-playbook.yml
+19.  curl https://gist.githubusercontent.com/slape/58541585cc1886d2e26cd8be557ce04c/raw/0ce2c7e744c54513616966affb5e9d96f5e12f73/metricbeat > /etc/ansible/metricbeat-config.yml
+20.  ansible-playbook metricbeat-playbook.yml
 
 **All Configuration Files located here**
 - Project-1-Azure Kibana/ansible)
